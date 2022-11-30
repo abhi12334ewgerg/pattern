@@ -1,0 +1,38 @@
+clear ;
+clc ;
+ // Au o t a s s o c i a t i v e ne t to s t o r e the v e c t o r
+ x =[1 1 -1 -1];
+ xv =[1;1; -1; -1];
+ //Training
+ w= zeros (4 ,4);
+ w=x '*x;
+ //Testing
+ yin =x*w;
+ for i =1:4
+ if yin (i) >0
+ y(i)=1;
+ else
+ y(i)= -1;
+ end
+ end
+disp('---Auto associative network---');
+ disp ( 'Weight mat r ix ' );
+ disp (w);
+ disp('output',y);
+ if xv ==y
+ disp ( 'The v e c t o r i s a Known Ve c tor ' );
+ else
+ disp ( 'The v e c t o r i s an Unknown Ve c tor ' );
+ end
+
+// He te ro a s s o c i a t i v e n e u r a l ne t
+ x =[1 1 0 0;1 0 1 0;1 1 1 0;0 1 1 0];
+ t =[1 0;1 0;0 1;0 1];
+ //Training
+ w= zeros (4 ,2);
+ for i =1:4
+ w=w+x(i ,1:4) '*t(i ,1:2) ;
+end
+disp('--Hetero asspciative memory network---')
+ disp ( 'Weight mat r ix ' );
+ disp (w);
