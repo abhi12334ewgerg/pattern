@@ -1,0 +1,24 @@
+ clc 
+clear all;  
+x=imread('D:\scilab\hello.jpg'); 
+figure; imshow(x) 
+redChannel = x(:, :, 1); greenChannel = x(:, :, 2); blueChannel = x(:, :, 3);
+whitePixels = redChannel == 255 & greenChannel == 255 & blueChannel == 255;
+ count = sum(whitePixels(:));
+ disp( "by method-1 number of white pixels=", count) 
+figure; 
+imshow(b11) 
+whitePixels = b11== 255 
+blackPixels=b11==0 
+count1 = sum(whitePixels(:)); 
+count2= sum(blackPixels(:)); d
+isp( "by method-2 number of white pixels=", count1) 
+disp( "by method-2 number of black pixels=", count2)
+ a=im2double(b11);
+b=find(a==0);
+w=find(a==1);
+numBlackPixels = length(b);
+numWhitePixels = length(w); 
+disp( "by method-3 number of white pixels=", numWhitePixels ) 
+disp( "by method-3 number of black pixels=", numBlackPixels)
+PROGRAM TO COUNT THE WHITE PIXELS FROM THE IMAGE
